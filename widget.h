@@ -2,7 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-
+#include <converter.h>
 namespace Ui {
 class Widget;
 }
@@ -14,7 +14,9 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget();
-
+    converter *converter_obj;
+public slots:
+    void output_binary();
 private:
     Ui::Widget *ui;
 };
