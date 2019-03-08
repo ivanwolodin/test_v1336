@@ -106,7 +106,7 @@ QString converter::sortingDebtorsByFloor(QString raw_data)
      *
     */
     QString response;
-    int flat_number;
+    int flat_number(0);
     float debt;
     QString family;
     QStringList myStringList = raw_data.split('\n'); // got all string devided by '\n'

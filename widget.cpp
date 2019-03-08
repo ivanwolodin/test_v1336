@@ -13,7 +13,7 @@ Widget::Widget(QWidget *parent) :
     connect(ui->processed_button,    // who is calling signal
             SIGNAL(clicked(bool)),   // signal itself
             this,                    // who udergoes
-            SLOT(output_processed_text()));  // what to do, calling slot
+            SLOT(outputProcessedText()));  // what to do, calling slot
 
 }
 
@@ -22,14 +22,12 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::output_processed_text()
+void Widget::outputProcessedText()
 {
     //int raw_int = ui->raw_text->toPlainText().toInt();
     QString raw_string = ui->raw_text->toPlainText();
     // implement exception processing
 
     //ui->processed_text->setText(converter_obj->toBinary(raw_int));
-    //ui->processed_text->setText(converter_obj->SortingByPetrolStations(raw_string));
-    ui->processed_text->setText(converter_obj->SortingDebtorsByFloor(raw_string));
-
+     ui->processed_text->setText(converter_obj->sortingByPetrolStations(raw_string));
 }

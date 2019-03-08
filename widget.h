@@ -15,10 +15,12 @@ public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget();
     converter *converter_obj;
+
 public slots:
-    void output_processed_text();
+    void outputProcessedText();
 private:
     Ui::Widget *ui;
 };
 
 #endif // WIDGET_H
+int dataValidation(QString raw_data);
