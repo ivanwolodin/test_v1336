@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QFileDialog>
 #include <converter.h>
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,8 @@ private:
 public slots:
     void outputProcessedText();
     void aboutTheProgram();
+    void writeInfoToFile();
+    void readInfoFromFile();
 };
 #endif // MAINWINDOW_H
 
