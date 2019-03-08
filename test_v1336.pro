@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-03-07T15:46:49
+# Project created by QtCreator 2019-03-08T19:03:42
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = test_v1336
+TARGET = untitled3
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,15 +26,15 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp \
+        mainwindow.cpp \
     converter.cpp
 
 HEADERS += \
-        widget.h \
+        mainwindow.h \
     converter.h
 
 FORMS += \
-        widget.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

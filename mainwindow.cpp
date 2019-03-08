@@ -1,33 +1,35 @@
-#include "widget.h"
-#include "ui_widget.h"
-#include <converter.h>
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include "qdebug.h"
-#include <QDebug>
-#include <QString>
-Widget::Widget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Widget)
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    converter_obj = new converter(); // instantiation of processing object
-    connect(ui->processed_button,    // who is calling signal
-            SIGNAL(clicked(bool)),   // signal itself
-            this,                    // who udergoes
+    this->setWindowTitle("Simple text processing");
+    converter_obj = new converter();       // instantiation of processing object
+    connect(ui->processed_button,          // who is calling signal
+            SIGNAL(clicked(bool)),         // signal itself
+            this,                          // who udergoes
             SLOT(outputProcessedText()));  // what to do, calling slot
 
+    connect(ui->actionAbout_the_program,
+            SIGNAL(triggered(bool)),
+            SLOT(aboutTheProgram()));
 }
 
-Widget::~Widget()
+MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void Widget::outputProcessedText()
+void MainWindow::outputProcessedText()
 {
     QString raw_string = ui->raw_text->toPlainText();
     raw_string = raw_string.remove(QRegExp("[«»^]"));
     int case_to_act = dataValidation(raw_string);
-    qDebug()<<case_to_act;
+//    qDebug()<<case_to_act;
     switch ( case_to_act ) {
      case 1:
        ui->processed_text->setText(converter_obj->toBinary(raw_string.toInt()));
@@ -41,7 +43,15 @@ void Widget::outputProcessedText()
     case -1:
       ui->processed_text->setText("Invalid input data");
       break;
-     }
+    }
+}
+
+void MainWindow::aboutTheProgram()
+{
+    QMessageBox::information(0,"About program","Program: Simple text processor\n"
+                                                       "Version: 2.0\n"
+                                                       "Author: Ivan Volodin\n"
+                                                       "");
 }
 
 int dataValidation(QString raw_data)
@@ -50,6 +60,9 @@ int dataValidation(QString raw_data)
      * the most primitive validation
      *
      * */
+    if (raw_data == ""){
+        return -1;
+    }
     QStringList myStringList = raw_data.split('\n'); // got all string devided by '\n'
     myStringList.removeAll(QString(""));
     if (myStringList.length() == 1){

@@ -24,3 +24,4 @@ public slots:
 };
 int getFloorByFlat(int flat);
 #endif // CONVERTER_H
+
