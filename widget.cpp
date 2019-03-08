@@ -29,5 +29,7 @@ void Widget::output_processed_text()
     // implement exception processing
 
     //ui->processed_text->setText(converter_obj->toBinary(raw_int));
-    ui->processed_text->setText(converter_obj->SortingByPetrolStations(raw_string));
+    //ui->processed_text->setText(converter_obj->SortingByPetrolStations(raw_string));
+    ui->processed_text->setText(converter_obj->SortingDebtorsByFloor(raw_string));
+
 }
