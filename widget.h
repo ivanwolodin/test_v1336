@@ -16,7 +16,7 @@ public:
     ~Widget();
     converter *converter_obj;
 public slots:
-    void output_binary();
+    void output_processed_text();
 private:
     Ui::Widget *ui;
 };

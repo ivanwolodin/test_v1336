@@ -13,7 +13,7 @@ Widget::Widget(QWidget *parent) :
     connect(ui->processed_button,    // who is calling signal
             SIGNAL(clicked(bool)),   // signal itself
             this,                    // who udergoes
-            SLOT(output_binary()));  // what to do, calling slot
+            SLOT(output_processed_text()));  // what to do, calling slot
 
 }
 
@@ -22,7 +22,7 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::output_binary()
+void Widget::output_processed_text()
 {
     //int raw_int = ui->raw_text->toPlainText().toInt();
     QString raw_string = ui->raw_text->toPlainText();
