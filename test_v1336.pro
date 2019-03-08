@@ -27,11 +27,11 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    converter.cpp
+    processor.cpp
 
 HEADERS += \
         mainwindow.h \
-    converter.h
+    processor.h
 
 FORMS += \
         mainwindow.ui

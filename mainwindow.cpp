@@ -1,15 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "qdebug.h"
-#include <QTextCodec>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->processed_text->setEnabled(true);
+    ui->processed_text->setEnabled(false);
     this->setWindowTitle("Simple text processing");
-    converter_obj = new converter();       // instantiation of processing object
+    converter_obj = new processor();       // instantiation of processing object
     connect(ui->processed_button,          // who is calling signal
             SIGNAL(clicked(bool)),         // signal itself
             this,                          // who udergoes

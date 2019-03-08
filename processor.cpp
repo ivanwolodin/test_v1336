@@ -1,17 +1,12 @@
-#include "converter.h"
+#include "processor.h"
 #include "qdebug.h"
-#include <QString>
-#include <string>
-#include <sstream>
-#include <QVector>
-#include <cmath>
 
-converter::converter(QWidget *parent) : QWidget(parent)
+processor::processor(QWidget *parent) : QWidget(parent)
 {
 
 }
 
-void converter::NumberAsBinary(char* _result,
+void processor::NumberAsBinary(char* _result,
                                int _number)
 {
     /* initial task declaration.
@@ -33,7 +28,7 @@ void converter::NumberAsBinary(char* _result,
     }
 }
 
-QString converter::toBinary(int n)
+QString processor::toBinary(int n)
 {
     /* function which convert int to binary
      *
@@ -43,7 +38,7 @@ QString converter::toBinary(int n)
     return r;
 }
 
-QString converter::sortingByPetrolStations(QString raw_data)
+QString processor::sortingByPetrolStations(QString raw_data)
 {
     /* function which sort petrol station by streets
      *
@@ -99,7 +94,7 @@ QString converter::sortingByPetrolStations(QString raw_data)
     return response;
 }
 
-QString converter::sortingDebtorsByFloor(QString raw_data)
+QString processor::sortingDebtorsByFloor(QString raw_data)
 {
     /* function which sort debtors by floor in desc. order
      * must be somehow optimized
@@ -154,7 +149,7 @@ QString converter::sortingDebtorsByFloor(QString raw_data)
                 debt_by_flat[flat_by_floor[floor]] //get debt
                 ] = flat_by_floor[floor];
     }
-    qDebug()<<flat_by_debt;
+   // qDebug()<<flat_by_debt;
     for(;iterator_map != flat_by_debt.begin();){
         --iterator_map;
         response += QString::number(iterator_map.key()); response += " ";// debt // float to double // must be handled

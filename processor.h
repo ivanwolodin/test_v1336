@@ -1,14 +1,17 @@
-#ifndef CONVERTER_H
-#define CONVERTER_H
+#ifndef PROCESSOR_H
+#define PROCESSOR_H
 
 #include <QWidget>
 #include <QMap>
+#include <QString>
+#include <QVector>
+#include <cmath>
 int GetFloorByFlat(int flat);
-class converter : public QWidget
+class processor : public QWidget
 {
     Q_OBJECT
 public:
-    explicit converter(QWidget *parent = nullptr);
+    explicit processor(QWidget *parent = nullptr);
 
 
 signals:
@@ -23,5 +26,5 @@ public slots:
     //QString SortingByPetrolStations(QString raw_data);
 };
 int getFloorByFlat(int flat);
-#endif // CONVERTER_H
+#endif // PROCESSOR_H
 

@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QFileDialog>
-#include <converter.h>
+#include <processor.h>
 namespace Ui {
 class MainWindow;
 }
@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    converter *converter_obj;
+    processor *converter_obj;
 private:
     Ui::MainWindow *ui;
 public slots:
