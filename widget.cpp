@@ -10,10 +10,10 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     converter_obj = new converter(); // instantiation of processing object
-    connect(ui->processed_button,  // who is calling signal
-            SIGNAL(clicked(bool)), // signal itself
-            this,                  // who udergoes
-            SLOT(output_binary()));
+    connect(ui->processed_button,    // who is calling signal
+            SIGNAL(clicked(bool)),   // signal itself
+            this,                    // who udergoes
+            SLOT(output_binary()));  // what to do, calling slot
 
 }
 
@@ -24,7 +24,10 @@ Widget::~Widget()
 
 void Widget::output_binary()
 {
-    int raw_int = ui->raw_text->toPlainText().toInt();
-    ui->processed_text->setText(converter_obj->toBinary(raw_int));
+    //int raw_int = ui->raw_text->toPlainText().toInt();
+    QString raw_string = ui->raw_text->toPlainText();
+    // implement exception processing
 
+    //ui->processed_text->setText(converter_obj->toBinary(raw_int));
+    ui->processed_text->setText(converter_obj->SortingByPetrolStations(raw_string));
 }
