@@ -95,7 +95,7 @@ void MainWindow::readInfoFromFile()
 {
     QString raw_text;
     QString fileName = QFileDialog::getOpenFileName(this,
-            tr("Save Data"), "",
+            tr("Read Data"), "",
             tr("Data (*.txt);;All Files (*)"));
     if (fileName.isEmpty())
            return;

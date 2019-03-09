@@ -11,8 +11,6 @@ void processor::NumberAsBinary(char* _result,
 {
     /* initial task declaration.
      *
-     * do not yet know how to handle it
-     *
      * */
     int arr[64]; //узнать длину результата
     int i=0, r;
@@ -70,10 +68,10 @@ QString processor::sortingByPetrolStations(QString raw_data)
             return "Inconsistency data with petrol type";
         }
 
-          // but example data contains inconsistency with formal task number two!
 //        if (!company_by_street[street].contains(company_name)){
 //            company_by_street[street].push_back(company_name);
 //        }
+
         company_by_street[street].push_back(company_name);
         if (!petrol_by_company[company_name].contains(petrol_type)){
             petrol_by_company[company_name].push_back(petrol_type);
@@ -135,7 +133,7 @@ QString processor::sortingDebtorsByFloor(QString raw_data)
         for (int i=0; i<flats_by_floor[floor].length(); i++){
             flat_number = flats_by_floor[floor][i];
             debt = debt_by_flat[flat_number];
-            if (debt<least_debt){//collision by the way, if they are equal, not explained in task paper how to resolve it
+            if (debt<least_debt){// if they are equal, not explained in task paper how to resolve it
                 flat_by_floor[floor] = flat_number;
                 least_debt = debt;
             }

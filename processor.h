@@ -23,7 +23,6 @@ public slots:
     QString toBinary(int n);
     QString sortingByPetrolStations(QString raw_data);
     QString sortingDebtorsByFloor(QString raw_data);
-    //QString SortingByPetrolStations(QString raw_data);
 };
 int getFloorByFlat(int flat);
 #endif // PROCESSOR_H
