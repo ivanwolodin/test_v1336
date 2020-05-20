@@ -67,18 +67,19 @@ N. Каждая из последующих N строк содержит инф
 Внешний вид приложения:
 
 
-![outlook](images/outlook.jpg)
+![outlook](images/outlook.png)
 
 
 Диаграмма классов:
 
 
-![class_uml](images/class_uml.jpg)
+![class_uml](images/class_uml.png)
+
 
 Помимо всего прочего, были имплементированы функции сохранения файла и чтения из него
 
 
-![class_uml](images/class_uml.jpg)
+![save_read](images/save_read.png)
 
 
 Приложение использует библиотеку Qt 5
